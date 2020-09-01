@@ -51,12 +51,13 @@ IT
 
 ### Test cases:
 
+The server's directory by default is set to where the project folder is saved. This can be changed using the CDIR command which will be discussed later. However to check initial directory:
 #### Init
-Upon starting the client, the following should be visible if the client could successfully make a socket.
+Upon starting the client, the following should be visible if the client could not successfully make a socket.
 ```
-Cannot make socket: IOException.
+Cannot make socket: IOException
 ```
-If the client successfully connects with the server, the following messge should appear in the client terminal.
+If the client successfully connects with the server, the following message should appear in the client terminal.
 ```
 +MyServer SFTP Service
 ```
@@ -68,9 +69,13 @@ Upon starting the server, nothing should appear. If the account data file does n
 ```
 Cannot find account data text file!
 ```
+If a correct command is not given at any point, the following message should appear.
+```
+-Try again
+```
 
 #### USER <user_id>
-This authenticates the user into the system. Each user type has different privledges which full be further discussed as we go along.
+This authenticates the user into the system. Each user type has different privledges. In the sample account data, admin and IT do not have to sign in with an account and password.
 ```
 $ USER admin
 !admin logged in
@@ -88,10 +93,72 @@ $ USER
 -Invalid user-id, try again
 ```
 
-
-The server's directory by default is set to where the project folder is saved. This can be changed using the CDIR command which will be discussed later. However to check initial directory:
+#### ACCT <account_id>
+This authenticates the account into the system. A user id must be specified prior, otherwise an error message will show.
 ```
-$ LIST F
-
+$ USER admin
+!admin logged in
+$ ACCT
+!Account not needed, logged-in
+$ ACCT test
+!Account not needed, logged-in
 ```
+```
+$ USER student
++User-id valid, send account and password
+$ ACCT
+-Invalid account, try again
+$ ACCT invalidAccount
+-Invalid account, try again
+$ ACCT aram675
+-Invalid account, try again
+$ ACCT aram485
++Account valid, send password
+```
+```
+$ USER student
++User-id valid, send account and password
+$ ACCT invalidAccount
+-Invalid account, try again
+$ ACCT aram675
+-Invalid account, try again
+$ ACCT aram485
++Account valid, send password
+```
+```
+$ ACCT aram485
+-Invalid account, please specify your User ID first
+```
+
+#### PASS <password>
+This is the final step in the authentication process. Invalid passwords can be tested, for brevity they will not be shown henceforth. The last test will ensure that the password can be asked before an account authentication, and if another account not associated with the password is given, the password for that account will be asked.
+```
+$ USER admin
+!admin logged in
+$ PASS invalid
+!Password not needed, logged-in
+```
+```
+$ USER student
++User-id valid, send account and password
+$ ACCT aram485
++Account valid, send password
+$ PASS one1
+! Logged in
+```
+```
+$ USER staff
++User-id valid, send account and password
+$ PASS invalid
+-Wrong password, try again
+$ PASS four4
++Send account
+$ ACCT fgru877
++Account valid, send password
+$ PASS five5
+! Logged in
+```
+##### The following commands can only be used once the user has been fully authenticated.
+
+#### LIST <V or F> <fullDirectoryPath>
 
