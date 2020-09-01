@@ -29,7 +29,7 @@ The following commands have been implemented:
 
 #### accountData.txt
 A sample text file representing valid accounts. If a UserID has full access without requiring an account or password these fields will be blank e.g. admin. 
-'''
+```
 UserID - AcctID - Paswrd
 admin
 student - aram485 - hi*pg3r3
@@ -38,7 +38,7 @@ student - pku678 - hi*ph3r7
 staff - aram675 - hi*tg3r5
 staff - fgru877 - hj*tg3r6
 guest - hgi4756 - hj*pg3r9
-'''
+```
 #### Test files
 * toSend.txt - A sample text file that can be sent to the client.
 * toReceive1.txt - A sample text file that can be sent to the server.
