@@ -5,6 +5,8 @@ Objective: Implementing a file transfering protocol, SFTP (Simple File Transfer 
 
 SFTP Credit: https://tools.ietf.org/html/rfc913
 
+This has been developed using JDK.14 on IntelliJ 2020. The application tuns on localhost.
+
 ### To run:
 
 
@@ -26,14 +28,24 @@ The following commands have been implemented:
 ### Files provided:
 
 #### accountData.txt
+A sample text file representing valid accounts. If a UserID has full access without requiring an account or password these fields will be blank e.g. admin. 
 ```
 UserID	   AcctID	      Paswrd
 admin
-student	  aram485	      hi*pg3r3
-student	  pdac546	      hj*ph3r4
-student	  pku678	      hi*ph3r7
-staff	    aram675	      hi*tg3r5
-staff	    fgru877	      hj*tg3r6
-guest	    hgi4756	      hj*pg3r9
+student - aram485 - hi*pg3r3
+student - pdac546 - hj*ph3r4
+student - pku678 - hi*ph3r7
+staff - aram675 - hi*tg3r5
+staff - fgru877 - hj*tg3r6
+guest - hgi4756 - hj*pg3r9
 IT
 ```
+#### Test files
+* toSend.txt - A sample text file that can be sent to the client.
+* toReceive1.txt - A sample text file that can be sent to the server.
+* toReceive2.txt - Another sample text file that can be sent to the server.
+* toappend.txt - A sample text file that can be appended to an existing file.
+
+### Test cases:
+
+#### USER
