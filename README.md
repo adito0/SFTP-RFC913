@@ -5,7 +5,7 @@ Objective: Implementing a file transfering protocol, SFTP (Simple File Transfer 
 SFTP Credit: https://tools.ietf.org/html/rfc913
 
 The following commands have been implemented:
-⋅⋅* USER
+..* USER
 ⋅⋅* ACCT
 ⋅⋅* PASS
 ⋅⋅* TYPE
