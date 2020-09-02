@@ -7,7 +7,7 @@ SFTP Credit: https://tools.ietf.org/html/rfc913
 This has been developed using JDK.14 on IntelliJ 2020. The application runs on localhost.
 
 ### To run:
-There are two ways to run this. Firstly through the .jar file. However this cannot be used if we want to check the the output in the case that an account_data.txt file does not exist.
+There are two ways to run this. Firstly through the .jar file. Open two terminals and in one go to where the server's far file is saved. In the other go to where the client's jar file is saved. To run command: java -jar name. NOTE: Ensure the data.txt file is in the same place as the server's jar file. The other way to run this is through an IDE like eclipse. If the jar files don;t work try this method. It has been verified to work with IntelliJ on the Windows OS. Once again ensure that data.txt is in the same package as the server's main class. 
 
 ### Commands:
 
@@ -28,7 +28,7 @@ For all these commands, either uppercase or lowercase is acceptable. Parameters 
 
 ### Files provided:
 
-#### accountData.txt
+#### data.txt
 A sample text file representing valid accounts. If a UserID has full access without requiring an account or password these fields will be blank e.g. admin.
 
 NOTE: This file must be in the same package as the server package in order to run.
@@ -52,6 +52,9 @@ IT
 #### Other testing files - please save this somewhere else on your computer
 * toReceive.txt
 * greetings.txt
+
+Greetings.txt are two different files. Please save one of them somewhere else. 
+
 
 ### Test cases:
 
@@ -362,13 +365,17 @@ Size of file: 8
 #### SIZE <size_specified>
 This command sends this size of the file so that the server can either accept the file, if it has enough space, or abort the transfer. If the file is accepted it will confirm that it has received the file. The size should be exactly what was printed out under the STOR command.
 ```
-$ USER admin
-!admin logged in
-$ CDIR C:\Users\user\Desktop\Testing
-!Changed working dir to C:\Users\user\Desktop\Testing
-$ STOR APP C:\Users\user\Desktop\greetings.txt
+$ STOR OLD C:\Users\user\Desktop\toReceive.txt
+Size of file: 57
++File exists, will create new file
+$ SIZE 57
++ok waiting for file
++Saved toReceive.txt
+```
+```
+$ STOR OLD C:\Users\user\Desktop\greetings.txt
 Size of file: 8
-+File exists, will append to file
++File exists, will write over old file
 $ SIZE 8
 +ok waiting for file
 +Saved greetings.txt
@@ -382,18 +389,14 @@ $ SIZE 8
 +Saved greetings(1).txt
 ```
 ```
-$ STOR OLD C:\Users\user\Desktop\greetings.txt
+$ USER admin
+!admin logged in
+$ CDIR C:\Users\user\Desktop\Testing
+!Changed working dir to C:\Users\user\Desktop\Testing
+$ STOR APP C:\Users\user\Desktop\greetings.txt
 Size of file: 8
-+File exists, will write over old file
++File exists, will append to file
 $ SIZE 8
 +ok waiting for file
 +Saved greetings.txt
-```
-```
-$ STOR OLD C:\Users\user\Desktop\toReceive.txt
-Size of file: 57
-+File exists, will create new file
-$ SIZE 57
-+ok waiting for file
-+Saved toReceive.txt
 ```
