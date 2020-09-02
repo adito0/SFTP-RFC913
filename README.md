@@ -7,7 +7,7 @@ SFTP Credit: https://tools.ietf.org/html/rfc913
 This has been developed using JDK.14 on IntelliJ 2020. The application runs on localhost.
 
 ### To run:
-There are two ways to run this. Firstly through the .jar file. Open two terminals and in one go to where the server's far file is saved. In the other go to where the client's jar file is saved. To run command: java -jar name. NOTE: Ensure the data.txt file is in the same place as the server's jar file. The other way to run this is through an IDE like eclipse. If the jar files don;t work try this method. It has been verified to work with IntelliJ on the Windows OS. Once again ensure that data.txt is in the same package as the server's main class. 
+There are two ways to run this. Firstly through the .jar file. Open two terminals and in one go to where the server's far file is saved. In the other go to where the client's jar file is saved. To run command: java -jar test.jar. Both of these jar files are in a folder called "test". NOTE: Ensure the data.txt file is in the same place as the server's jar file. The other way to run this is through an IDE like eclipse. If the jar files don't work try this method. The files are in SFTP_725A1. This project has been verified to work with IntelliJ on the Windows OS. Once again ensure that data.txt is in the same package as the server's main class. 
 
 ### Commands:
 
