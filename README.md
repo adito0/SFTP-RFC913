@@ -43,11 +43,15 @@ staff - fgru877 - hj*tg3r6
 guest - hgi4756 - hj*pg3r9
 IT
 ```
-#### Test files
-* toSend.txt - A sample text file that can be sent to the client.
-* toReceive1.txt - A sample text file that can be sent to the server.
-* toReceive2.txt - Another sample text file that can be sent to the server.
-* toappend.txt - A sample text file that can be appended to an existing file.
+#### Testing Folder files
+* toSend.txt
+* greetings.txt
+* hello.txt
+* blank.docx
+* aSmolFolder
+#### Other testing files - please save this somewhere else on your computer
+* toReceive.txt
+* greetings.txt
 
 ### Test cases:
 
